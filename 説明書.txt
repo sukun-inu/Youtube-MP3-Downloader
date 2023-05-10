@@ -4,7 +4,7 @@
 
 YouTubeの動画をMP3形式でダウンロードすることができるWindows向けのexeです。
 
-まず最初にYoutube MP3 Downloader.exeを実行し、お好きな任意の場所にファイルを解凍して下さい。
+まず最初に「Youtube MP3 Downloader.exe」を実行し、お好きな任意の場所にファイルを解凍して下さい。
 
 解凍後、Youtube MP3 Downloaderというフォルダーが生成されることを確認しRun.exeも含まれていることを確認して下さい。
 
