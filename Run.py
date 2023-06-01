@@ -3,14 +3,16 @@ import subprocess
 import shutil
 import time
 
+__version__ = "0.1"
+
 def download_ytdlp():
-    """ yt-dlp.exeをダウンロードする """
+    # yt-dlp.exeをダウンロードする
     if not os.path.exists('yt-dlp.exe'):
         print('[LOG] yt-dlpをダウンロード中...')
         subprocess.run(['powershell', '-Command', "Start-BitsTransfer -Source 'https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.exe' -Destination 'yt-dlp.exe'"], shell=True)
 
 def download_ffmpeg():
-    """ ffmpeg.exeをダウンロードする """
+    # ffmpeg.exeをダウンロードする
     if not os.path.exists('ffmpeg.exe'):
         print('[LOG] ffmpegをダウンロード中...')
         subprocess.run(['powershell', '-Command', "Start-BitsTransfer -Source 'https://github.com/GyanD/codexffmpeg/releases/latest/download/ffmpeg-6.0-essentials_build.zip' -Destination 'ffmpeg.zip'"], shell=True)
@@ -21,7 +23,7 @@ def download_ffmpeg():
         os.rmdir('ffmpeg')
 
 def update_ytdlp():
-    """ yt-dlpを更新する """
+    # yt-dlpを更新する
     print('[LOG] yt-dlpのアップデートを確認中...')
     subprocess.run(['yt-dlp', '-U'], shell=True)
     if os.path.exists('yt-dlp.exe.old'):
@@ -31,7 +33,7 @@ def update_ytdlp():
         subprocess.run(['powershell', '-Command', "Write-Host '[LOG] 最新バージョンを使用中です。' -ForegroundColor Green"], shell=True)
 
 def download_videos():
-    """ 動画をダウンロードする """
+    # 動画をダウンロードする
     urls = input('YouTubeのURLかプレイリストURLを入力して下さい (コンマで区切って複数入力可能):\n').split(',')
     urls = [url.strip() for url in urls]
     for url in urls:
